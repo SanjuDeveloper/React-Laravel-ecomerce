@@ -23,4 +23,5 @@ Route::post('/register','App\Http\Controllers\UserController@register');
 Route::post('/login','App\Http\Controllers\UserController@login');
 Route::post('/addproduct','App\Http\Controllers\productController@addProducts');
 Route::get('/getproduct','App\Http\Controllers\productController@getProduct');
-Route::get('/deleteproduct/{id}','App\Http\Controllers\productController@deleteProduct');
+Route::delete('/deleteproduct/{id}','App\Http\Controllers\productController@deleteProduct');
+Route::get('/singleproduct/{id}','App\Http\Controllers\productController@getsignleproduct');

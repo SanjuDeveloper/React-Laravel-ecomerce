@@ -34,5 +34,12 @@ class productController extends Controller
 
       return ['response'=>$message];
     }
+
+    function getsignleproduct($id)
+    {
+      return product::find($id);
+    }
+
 }
+
 
