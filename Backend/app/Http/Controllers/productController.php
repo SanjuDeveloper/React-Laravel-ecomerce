@@ -40,6 +40,21 @@ class productController extends Controller
       return product::find($id);
     }
 
+    function updateProduct($id,Request $req)
+    {
+      $object = product::find($id);
+     
+      $object->name=$req->input('name');
+      $object->price=$req->input('price');
+      $object->quantity=$req->input('quantity');
+      $object->description=$req->input('description');
+      if($req->file('image')){
+        $object->image=$req->file('image')->store('products');
+      }
+      $object->save();
+        return $object;
+    }
+
 }
 
 
