@@ -55,6 +55,11 @@ class productController extends Controller
         return $object;
     }
 
+    function searchProduct($searcfor)
+    {
+      return product::where('name','LIKE',"%$searcfor%")->get();
+    }
+
 }
 
 
